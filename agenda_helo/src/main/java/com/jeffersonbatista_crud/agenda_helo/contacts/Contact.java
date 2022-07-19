@@ -20,7 +20,7 @@ public class Contact {
 	private String phone;
 	@Column(nullable = false)
 	private String email;
-	
+	@Column(nullable = false)
 	private String urlAvatar;
 	
 	//MÈTODO CONSTRUTOR
