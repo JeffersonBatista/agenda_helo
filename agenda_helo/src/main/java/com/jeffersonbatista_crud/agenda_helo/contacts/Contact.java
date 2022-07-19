@@ -1,5 +1,7 @@
 package com.jeffersonbatista_crud.agenda_helo.contacts;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -81,5 +83,30 @@ public class Contact {
 	public void setUrlAvatar(String urlAvatar) {
 		this.urlAvatar = urlAvatar;
 	}
+	//Indetify Object
+	@Override
+	public int hashCode() {
+		return getClass().hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Contact other = (Contact) obj;
+		return id == other.id;
+	}
+	
+	//toString
+	@Override
+	public String toString() {
+		return "Contact [id=" + id + ", name=" + name + ", phone=" + phone + ", email=" + email + ", urlAvatar="
+				+ urlAvatar + "]";
+	}
 		
+	
 }
